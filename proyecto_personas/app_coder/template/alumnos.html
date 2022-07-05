@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<center>
+ 
+<div class="card w-75">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for x in alumnos%}
+    <tr>
+      <th scope="row">{{x.nombre}}</th>
+      <td>{{x.apellido}}</td>
+      <td>{{x.dni}}</td>
+      <td>{{x.nacimiento}}</td>
+      <td><a href="{%url 'eliminar_alumno' x.id%}">Eliminar</a></td>
+      <td><a href="{%url 'editar_alumno' x.id%}">Editar</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+</div><a class="btn btn-outline-secondary" href="{% url 'cargar_alumno'%}">Cargar nuevo alumno</a></center>
+
+
+{% endblock %}

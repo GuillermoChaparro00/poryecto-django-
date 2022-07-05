@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<p></p>
+<p></p>
+<p></p>
+<center>
+<div class="card w-75" >
+<center>
+<div class="card w-75" >
+    <div class="card-body">
+        <form action="cargar_curso" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Curso</label>
+      <input  class="form-control"  name="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Camada</label>
+        <input  class="form-control"  name="camada">
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Turno</label>
+        <input  class="form-control" name="turno">
+        
+      </div>
+
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+</div>
+</div>
+</center>
+{% endblock %}

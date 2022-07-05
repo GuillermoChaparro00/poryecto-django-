@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}    
+{% if alumnos %}
+<center>
+    <div class="card w-75">
+      <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+      {%for x in alumnos%}
+        <tr>
+          <th scope="row">{{x.nombre}}</th>
+          <td>{{x.apellido}}</td>
+          <td>{{x.dni}}</td>
+          <td>{{x.nacimiento}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+    </div></center>
+{% else %}
+    <p>No se encontraron alumnos</p>
+{% endif %}
+
+{%endblock%}

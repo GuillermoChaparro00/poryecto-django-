@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<form action="buscar" method="GET">
+<div class="mb-3">
+    <label  class="form-label">Nombre</label>
+    <input  class="form-control"  name="nombre" >
+    
+  </div>
+
+<button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+{% endblock %}

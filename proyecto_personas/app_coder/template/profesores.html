@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<center>
+<div class="card w-75">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for x in profesores%}
+    <tr>
+      <th scope="row">{{x.nombre}}</th>
+      <td>{{x.apellido}}</td>
+      <td>{{x.dni}}</td>
+      <td>{{x.nacimiento}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+</div><a class="btn btn-outline-secondary" href="{% url 'cargar_profesores'%}">Cargar nuevo profesor</a></center>
+
+
+{% endblock %}
+
+

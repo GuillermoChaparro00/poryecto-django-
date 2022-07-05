@@ -1,0 +1,47 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<p></p>
+<p></p>
+<p></p>
+<center>
+<div class="card w-75" >
+<center>
+<div class="card w-75" >
+    <div class="card-body">
+        <form action="cargar_profesores" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre Profesor</label>
+      <input  class="form-control"  name="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Apellido</label>
+        <input  class="form-control"  name="apellido">
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Edad</label>
+        <input  class="form-control" name="edad">
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">DNI</label>
+        <input  class="form-control"  name="dni" >
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nacimiento</label>
+        <input  class="form-control"  name="nacimiento">
+        
+      </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+</div>
+</div>
+</center>
+{% endblock %}
